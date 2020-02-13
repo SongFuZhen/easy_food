@@ -8,7 +8,7 @@
 英文官网：https://www.cuba-platform.com/
 中文官网：https://www.cuba-platform.cn/
 
-# 项目需求
+## 项目需求
 
 -   实体有：用户类，店铺类，菜品类，订单类。其中用户，店铺，菜品是主数据，订单是事务数据。
 -   每个用户每天只能定一次餐，定一次餐只能选择一个店铺，但是可以选择多道菜品。
@@ -30,14 +30,15 @@ Studio 使用说明：
 中文：https://doc.cuba-platform.cn/studio-chs/
 
 
-# 数据还原
+## 数据还原
 
-## 删除压缩包 `dev_data.zipx` 后面的`x` 之后解压
+### 解压缩
+删除压缩包 `dev_data.zipx` 后面的`x` 之后解压
 
-## 还原数据库
+### 还原数据库
 sfz_easyfood.sql 直接还原
 
-## 还原图片
+### 还原图片
 将图片放在`\deploy\tomcat\work\app-core\filestorage` 路径下即可
 
 
