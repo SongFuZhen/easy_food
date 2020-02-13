@@ -28,3 +28,14 @@
 Studio 使用说明：
 英文：https://doc.cuba-platform.com/studio/
 中文：https://doc.cuba-platform.cn/studio-chs/
+
+
+# 数据还原
+
+## 还原数据库
+sfz_easyfood.sql 直接还原
+
+## 还原图片
+将图片放在`\deploy\tomcat\work\app-core\filestorage` 路径下即可
+
+
