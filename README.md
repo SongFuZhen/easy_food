@@ -32,6 +32,8 @@ Studio 使用说明：
 
 # 数据还原
 
+## 删除压缩包 `dev_data.zipx` 后面的`x` 之后解压
+
 ## 还原数据库
 sfz_easyfood.sql 直接还原
 
