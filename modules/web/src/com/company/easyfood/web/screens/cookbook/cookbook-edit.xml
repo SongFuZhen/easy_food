@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.easyfood.web.screens.cookbook">
+    <data>
+        <instance id="cookbookDc"
+                  class="com.company.easyfood.entity.Cookbook"
+                  view="cookbook-with-shop-view">
+            <loader/>
+        </instance>
+        <collection id="shopsDc" class="com.company.easyfood.entity.Shop" view="_minimal">
+            <loader id="shopsLc">
+                <query>
+                    <![CDATA[select e from easyfood_Shop e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="cookbookDc">
+            <column width="250px">
+                <lookupPickerField id="shopField" optionsContainer="shopsDc" property="shop">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                    </actions>
+                </lookupPickerField>
+                <textField id="nameField" property="name"/>
+                <currencyField id="cookbookField" datatype="decimal" dataContainer="cookbookDc" property="price" currency="¥"
+                               required="true" currencyLabelPosition="LEFT"/>
+                <textField id="ingredientsField" property="ingredients"/>
+
+                <textArea id="remarkField" property="remark"/>
+                <groupBox id="cookbookBox" caption="msg://cookbookImage">
+                    <hbox spacing="true" align="TOP_CENTER">
+                        <upload id="uploadImageBtn"/>
+                        <button id="clearImageBtn" caption="msg://clearImage"/>
+                    </hbox>
+
+                    <image id="image" height="120px" width="120" align="MIDDLE_CENTER" scaleMode="CONTAIN"
+                           css="margin-top: 10px;"/>
+                </groupBox>
+
+            </column>
+        </form>
+
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="cookbooksTable"
+        messagesPack="com.company.easyfood.web.screens.cookbook">
+    <data readOnly="true">
+        <collection id="cookbooksDc"
+                    class="com.company.easyfood.entity.Cookbook"
+                    view="cookbook-with-shop-view">
+            <loader id="cookbooksDl">
+                <query>
+                    <![CDATA[select e from easyfood_Cookbook e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="cookbooksTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="cookbooksTable"
+                dataLoader="cookbooksDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="cookbooksTable"
+                    width="100%"
+                    dataContainer="cookbooksDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="shop"/>
+                <column id="name"/>
+                <column id="price"/>
+                <column id="ingredients"/>
+                <column id="remark"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="cookbooksTable.create"/>
+                <button id="editBtn" action="cookbooksTable.edit"/>
+                <button id="removeBtn" action="cookbooksTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

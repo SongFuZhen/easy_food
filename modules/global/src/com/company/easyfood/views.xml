@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="easyfood_Cookbook" name="cookbook-with-shop-view" extends="_local">
+        <property name="shop" view="_minimal"/>
+        <property name="image" view="_minimal"/>
+    </view>
+    <view entity="easyfood_OrderDetail" name="orderDetail-with-cookbook-view" extends="_local">
+        <property name="shop" view="_minimal"/>
+        <property name="cookbook" view="_minimal">
+            <property name="price"/>
+            <property name="image" view="_minimal"/>
+            <property name="ingredients"/>
+        </property>
+    </view>
+    <view entity="easyfood_Shop" name="shop-with-manager-view" extends="_local">
+        <property name="manager" view="_minimal"/>
+    </view>
+    <view entity="easyfood_Order" name="order-view" extends="_local">
+        <property name="shop" view="_minimal"/>
+        <property name="user" view="_minimal"/>
+    </view>
+</views>

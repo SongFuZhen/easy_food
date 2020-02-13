@@ -1,0 +1,5 @@
+@import "hover-ext";
+
+@mixin com_company_easyfood {
+  @include com_company_easyfood-hover-ext;
+}

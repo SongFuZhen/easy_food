@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.easyfood.web.screens.orderdetail">
+    <data>
+        <instance id="orderDetailDc"
+                  class="com.company.easyfood.entity.OrderDetail"
+                  view="orderDetail-with-cookbook-view">
+            <loader/>
+        </instance>
+        <collection id="cookbooksDc" class="com.company.easyfood.entity.Cookbook" view="cookbook-with-shop-view">
+            <loader id="cookbooksDl">
+                <query>
+                    <![CDATA[select e from easyfood_Cookbook e where e.shop = :shop]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="orderDetailDc">
+            <column width="250px">
+                <lookupField id="cookbookField" property="cookbook" captionProperty="name"
+                             optionsContainer="cookbooksDc"/>
+
+                <currencyField id="currencyField" property="quantity" currency="份"/>
+
+                <image id="image" css="margin-top: 10px;" height="120px" width="120px" scaleMode="CONTAIN"
+                       align="MIDDLE_CENTER" caption="msg://image"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

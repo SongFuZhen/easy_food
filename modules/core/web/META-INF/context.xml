@@ -1,0 +1,35 @@
+<Context>
+
+    <!-- Database connection -->
+
+    <!-- Switch off session serialization -->
+    <Manager pathname=""/>
+    <!--<Resource driverClassName="org.hsqldb.jdbc.JDBCDriver"
+          maxIdle="2"
+          maxTotal="20"
+          maxWaitMillis="5000"
+          name="jdbc/CubaDS"
+          password=""
+          type="javax.sql.DataSource"
+          url="jdbc:hsqldb:hsql://localhost:9010/easyfood-pAsnTjD3f"
+          username="sa"/>-->
+    <!--<Resource driverClassName="com.mysql.jdbc.Driver"
+          maxIdle="2"
+          maxTotal="20"
+          maxWaitMillis="5000"
+          name="jdbc/CubaDS"
+          password="123456@"
+          type="javax.sql.DataSource"
+          url="jdbc:mysql://47.96.97.244/sfz_easyfood?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC"
+          username="root"/>-->
+    <Resource driverClassName="com.mysql.jdbc.Driver"
+              maxIdle="2"
+              maxTotal="20"
+              maxWaitMillis="5000"
+              name="jdbc/CubaDS"
+              password="123456@"
+              type="javax.sql.DataSource"
+              url="jdbc:mysql://47.96.97.244/sfz_easyfood?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf-8"
+              username="root"/>
+
+</Context>
